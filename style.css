@@ -1,0 +1,231 @@
+/* Set the page colors, font, and basic spacing. */
+:root {
+	--deep-blue: #073b4c;
+	--teal: #087f8c;
+	--mint: #c9f4e8;
+	--sunshine: #ffd166;
+	--white: #ffffff;
+}
+
+/* Remove the browser's default space around the page. */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--white);
+	background: var(--deep-blue);
+	font-family: "Nunito", sans-serif;
+}
+
+/* Keep the site name visible in a short, calm header. */
+.site-header {
+	padding: 18px 9%;
+	background: var(--deep-blue);
+}
+
+.site-name {
+	color: var(--mint);
+	font-size: 1.35rem;
+	font-weight: 900;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+}
+
+.site-name:hover,
+.site-name:focus {
+	color: var(--sunshine);
+}
+
+/* Create a tall banner with a subtle light overlay over the background image. */
+.foster-banner {
+	position: relative;
+	min-height: 96vh;
+	padding: 96px 9% 72px;
+	overflow: hidden;
+	background-image: linear-gradient(90deg, rgba(7, 59, 76, 0.88) 0%, rgba(7, 59, 76, 0.68) 52%, rgba(7, 59, 76, 0.18) 100%), url("img/cta-bg.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+/* Keep the message easy to scan over the photo. */
+.banner-content {
+	position: relative;
+	z-index: 1;
+	max-width: 620px;
+}
+
+.eyebrow {
+	margin: 0 0 20px;
+	color: var(--mint);
+	font-size: 0.9rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	max-width: 590px;
+	margin-bottom: 24px;
+	font-size: clamp(3rem, 7vw, 6.4rem);
+	line-height: 0.96;
+	letter-spacing: -0.04em;
+}
+
+.banner-description {
+	max-width: 500px;
+	margin-bottom: 34px;
+	color: #e6fffa;
+	font-size: 1.15rem;
+	line-height: 1.7;
+}
+
+/* Make the primary action bright and easy to find. */
+.cta-button {
+	display: inline-block;
+	padding: 16px 24px;
+	border: 3px solid var(--sunshine);
+	color: var(--deep-blue);
+	background: var(--sunshine);
+	font-size: 1.05rem;
+	font-weight: 900;
+	text-decoration: none;
+}
+
+.cta-button span {
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 1.35rem;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+	color: var(--white);
+	background: transparent;
+}
+
+/* Add a human detail to the corner without hiding the main message. */
+.pet-photo {
+	position: absolute;
+	right: 8%;
+	bottom: 9%;
+	width: 220px;
+	margin: 0;
+	padding: 10px 10px 14px;
+	border: 1px solid rgba(255, 255, 255, 0.55);
+	background: rgba(7, 59, 76, 0.78);
+}
+
+.pet-photo img {
+	display: block;
+	width: 100%;
+	height: 190px;
+	object-fit: cover;
+}
+
+.pet-photo figcaption {
+	padding-top: 11px;
+	color: var(--mint);
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+/* Center the image and fostering information in two equal columns. */
+.fostering-info {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 70px 9%;
+	color: var(--deep-blue);
+	background: var(--mint);
+	text-align: center;
+}
+
+.fostering-column {
+	display: inline-block;
+	width: 47%;
+	margin: 0 1%;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.fostering-column img {
+	display: block;
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+}
+
+.fostering-copy .eyebrow {
+	margin-bottom: 14px;
+	color: var(--teal);
+}
+
+.fostering-copy h2 {
+	max-width: 560px;
+	margin-bottom: 12px;
+	font-size: 2rem;
+}
+
+.fostering-copy p {
+	margin-bottom: 0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+/* Stack the photo below the message on smaller screens. */
+@media (max-width: 700px) {
+	.foster-banner {
+		min-height: auto;
+		padding: 72px 8% 48px;
+		background-position: 65% center;
+	}
+
+	.banner-content {
+		padding-top: 0;
+	}
+
+	h1 {
+		font-size: 3.6rem;
+	}
+
+	.pet-photo {
+		position: static;
+		width: 100%;
+		max-width: 260px;
+		margin-top: 58px;
+	}
+
+	.fostering-info {
+		padding: 56px 8%;
+	}
+
+	.fostering-column {
+		display: block;
+		width: 100%;
+		margin: 0 0 32px;
+	}
+
+	.fostering-column img {
+		height: 260px;
+	}
+
+	.fostering-copy {
+		margin-bottom: 0;
+	}
+
+	.fostering-copy h2 {
+		font-size: 1.8rem;
+	}
+
+	.fostering-copy p {
+		font-size: 1rem;
+	}
+}
